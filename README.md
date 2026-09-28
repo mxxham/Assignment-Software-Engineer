@@ -118,9 +118,9 @@ tracked files**. The `.gitignore` already lists `node_modules/`, but the
 dependencies were committed before that rule took effect, so the ignore has
 never applied retroactively.
 
-This inflates the repository to ~18 MB and makes the actual source (16 files
-under `src/`) hard to see. The fix is to drop the directory from git history and
-commit only the lockfile:
+This inflates the repository to ~18 MB and makes the actual source (15 files
+under `src/`) hard to see. The fix is to stop tracking the directory and commit
+only the lockfile:
 
 ```bash
 git rm -r --cached node_modules
